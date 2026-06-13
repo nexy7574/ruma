@@ -69,6 +69,15 @@ pub mod v3 {
         #[serde(default, skip_serializing_if = "<[_]>::is_empty")]
         pub invite_3pid: Vec<Invite3pid>,
 
+        /// The reason to include in invites sent due to the `invite` list.
+        #[cfg(feature = "unstable-msc4491")]
+        #[serde(
+            default,
+            skip_serializing_if = "Option::is_none",
+            rename = "uk.timedout.msc4491.invite_reason"
+        )]
+        pub invite_reason: Option<String>,
+
         /// If set, this sets the `is_direct` flag on room invites.
         #[serde(default, skip_serializing_if = "ruma_common::serde::is_default")]
         pub is_direct: bool,

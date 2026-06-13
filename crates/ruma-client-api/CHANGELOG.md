@@ -6,6 +6,9 @@ Improvements:
 
 - `profile::get_profile` is now using `ruma_common::profile::UserProfile` for its underlying data
   storage.
+- Added unstable support for [MSC4491] "Invite reasons in room creation"
+
+[MSC4491]: https://github.com/matrix-org/matrix-spec-proposals/pull/4491
 
 ## 0.24.0
 
